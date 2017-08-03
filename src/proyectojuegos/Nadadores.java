@@ -122,7 +122,7 @@ public class Nadadores extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Nadadores/imgaenkk5.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(1000, 150, 80, 40);
+        jLabel1.setBounds(430, 30, 80, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Nadadores/imagenkk1.png"))); // NOI18N
         jLabel4.setText("jLabel4");
