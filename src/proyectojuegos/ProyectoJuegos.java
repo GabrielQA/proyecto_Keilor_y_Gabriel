@@ -15,7 +15,7 @@ public class ProyectoJuegos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Test X = new Test();
+        Prueba3 X = new Prueba3();
         X.setVisible(true);
         
     }

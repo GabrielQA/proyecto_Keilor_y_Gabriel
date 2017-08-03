@@ -13,22 +13,21 @@ import java.util.logging.Logger;
  *
  * @author GABRIEL-PC
  */
-public class Test extends javax.swing.JFrame {
+public class Prueba3 extends javax.swing.JFrame {
 
-   int i=0;
-    public Test() throws InterruptedException {
+    /**
+     * Creates new form Prueba3
+     */
+    int i=0;
+    public Prueba3() {
         initComponents();
-        
         Primero();
         Segundo();
         Tercero();
         Cuarto();
         Quinto();
-        
-       
-        
     }
-      public void OcultarPrimero() {
+    public void OcultarPrimero() {
       PrimeroA.setVisible(false);
       SegundoA.setVisible(false);
       TerceroA.setVisible(false);
@@ -45,7 +44,7 @@ public class Test extends javax.swing.JFrame {
     }
     
     
-    public void OcultarPrimeroNadado() {
+    public void OcultarPrimeroNadado() throws InterruptedException {
         if(i==0){
        PrimeroA.setVisible(true);
       SegundoA.setVisible(false);
@@ -60,6 +59,8 @@ public class Test extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
+      Thread.sleep(2000);
+      i++;
        }
         else if(i==1){
             PrimeroA.setVisible(false);
@@ -75,6 +76,7 @@ public class Test extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
+        Thread.sleep(2000);
       i++;
         }
         else if(i==2){
@@ -91,6 +93,8 @@ public class Test extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
+        Thread.sleep(2000);
+      i++;
         }
         else if(i==3){
             PrimeroA.setVisible(false);
@@ -106,6 +110,8 @@ public class Test extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
+        Thread.sleep(2000);
+        i++;
         }
         else if(i==4){
             PrimeroA.setVisible(false);
@@ -121,7 +127,8 @@ public class Test extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-      
+        Thread.sleep(2000);
+        i++;
     }
     }
     public void Movimiento1() throws InterruptedException {
@@ -151,6 +158,7 @@ public class Test extends javax.swing.JFrame {
      public  void Quinto() {
         PrimeroE.setVisible(false);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,9 +168,6 @@ public class Test extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel14 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
         TercerNadador = new javax.swing.JButton();
         CuartoNadador = new javax.swing.JButton();
@@ -236,12 +241,6 @@ public class Test extends javax.swing.JFrame {
         TerceavoB3 = new javax.swing.JLabel();
         FOndo = new javax.swing.JLabel();
         Boton = new javax.swing.JButton();
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FondosandPersonas/jasjdasjdaksd.png"))); // NOI18N
-
-        jLabel6.setText("jLabel2");
-
-        jLabel5.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -631,9 +630,21 @@ public class Test extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TercerNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TercerNadadorActionPerformed
+        PrimeroC.setVisible(true);
+    }//GEN-LAST:event_TercerNadadorActionPerformed
+
+    private void CuartoNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuartoNadadorActionPerformed
+        PrimeroD.setVisible(true);
+    }//GEN-LAST:event_CuartoNadadorActionPerformed
+
+    private void QuintoNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuintoNadadorActionPerformed
+        PrimeroE.setVisible(true);
+    }//GEN-LAST:event_QuintoNadadorActionPerformed
+
     private void SegundoNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SegundoNadadorActionPerformed
         PrimeroB.setVisible(true);
-       
+
     }//GEN-LAST:event_SegundoNadadorActionPerformed
 
     private void PrimerJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimerJugadorActionPerformed
@@ -641,31 +652,23 @@ public class Test extends javax.swing.JFrame {
         PrimeroA.setVisible(true);
     }//GEN-LAST:event_PrimerJugadorActionPerformed
 
-    private void TercerNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TercerNadadorActionPerformed
-      PrimeroC.setVisible(true);
-    }//GEN-LAST:event_TercerNadadorActionPerformed
-
-    private void CuartoNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuartoNadadorActionPerformed
-       PrimeroD.setVisible(true);
-    }//GEN-LAST:event_CuartoNadadorActionPerformed
-
-    private void QuintoNadadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuintoNadadorActionPerformed
-        PrimeroE.setVisible(true);
-    }//GEN-LAST:event_QuintoNadadorActionPerformed
-
     private void BotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActionPerformed
         try {
-            Movimiento1();
+            while(i<=4){
+                OcultarPrimeroNadado(); 
+            }
+           
+          // Movimiento1();
         } catch (InterruptedException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Apart.mover();
         ArrayList ListRandom=new ArrayList();
-       
+
         for (int x=0; x>ListRandom.size(); x++ ){
-             int X=(int)(Math.random()*5);
-              ListRandom.add(X);
-            
+            int X=(int)(Math.random()*5);
+            ListRandom.add(X);
+
         }
     }//GEN-LAST:event_BotonActionPerformed
 
@@ -698,24 +701,20 @@ public class Test extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Prueba3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Prueba3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Prueba3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Prueba3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new Test().setVisible(true);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new Prueba3().setVisible(true);
             }
         });
     }
@@ -793,9 +792,6 @@ public class Test extends javax.swing.JFrame {
     private javax.swing.JLabel UndecimoB1;
     private javax.swing.JLabel UndecimoB2;
     private javax.swing.JLabel UndecimoB3;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
