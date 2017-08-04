@@ -59,7 +59,7 @@ public class Prueba3 extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-      Thread.sleep(2000);
+      Thread.sleep(1000);
       i++;
        }
         else if(i==1){
@@ -76,7 +76,7 @@ public class Prueba3 extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
       i++;
         }
         else if(i==2){
@@ -93,7 +93,7 @@ public class Prueba3 extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
       i++;
         }
         else if(i==3){
@@ -110,7 +110,7 @@ public class Prueba3 extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         i++;
         }
         else if(i==4){
@@ -127,7 +127,7 @@ public class Prueba3 extends javax.swing.JFrame {
       UndecimoA.setVisible(false);
       DoceaboA.setVisible(false);
       TerceavoA.setVisible(false);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         i++;
     }
     }
@@ -653,6 +653,7 @@ public class Prueba3 extends javax.swing.JFrame {
     }//GEN-LAST:event_PrimerJugadorActionPerformed
 
     private void BotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActionPerformed
+        
         try {
             while(i<=4){
                 OcultarPrimeroNadado(); 
@@ -673,14 +674,22 @@ public class Prueba3 extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonActionPerformed
 
     private void panelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panelKeyPressed
-        if(evt.getKeyCode() == 40){
-            OcultarPrimeroNadado();
+        if(evt.getKeyCode() == 20){
+            try {
+                OcultarPrimeroNadado();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Prueba3.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_panelKeyPressed
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-         if(evt.getKeyCode() == 40){
-            OcultarPrimeroNadado();
+         if(evt.getKeyCode() == 20){
+             try {
+                 OcultarPrimeroNadado();
+             } catch (InterruptedException ex) {
+                 Logger.getLogger(Prueba3.class.getName()).log(Level.SEVERE, null, ex);
+             }
         }
     }//GEN-LAST:event_formKeyPressed
 
