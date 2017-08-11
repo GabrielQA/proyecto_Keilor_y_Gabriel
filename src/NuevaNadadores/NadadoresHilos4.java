@@ -4,14 +4,10 @@
  * and open the template in the editor.
  */
 package NuevaNadadores;
-import java.awt.Color;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,28 +21,26 @@ import javax.swing.JTextPane;
  *
  * @author GABRIEL-PC
  */
-public class NadadoresHilos extends JFrame {
-    JPanel[] Panelp;
+public class NadadoresHilos4 extends JFrame {
+     JPanel[] Panelp;
     
     JPanel[] paneles;
     JLabel[] labels;
-    //JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA
-    String[] nombres = {"JosueQA", "FernandaSE", "RicardoRA", "StefanyFC", "LoganNA"};
-    
+    String[] nombres = {"QuintoJugador", "CuartoJugador"};
     JButton boton;
     JTextPane a;
     
 
     int ANCHO = 1100;
 
-    public NadadoresHilos() {
+    public NadadoresHilos4() {
         setLayout(new GridLayout(0, 1));
        
         
-        paneles = new JPanel[5];
-        labels = new JLabel[5];
+        paneles = new JPanel[2];
+        labels = new JLabel[2];
         
-        for (int n = 0; n < 5; n++) {
+        for (int n = 0; n < 2; n++) {
             paneles[n] = new JPanel();
             add(paneles[n]);
             
@@ -68,17 +62,16 @@ public class NadadoresHilos extends JFrame {
                 
                 Nadadores QuintoJugador = new Nadadores("QuintoJugador", ANCHO - 3, labels[0]);
                 Nadadores CuartoJugador = new Nadadores("CuartoJugador", ANCHO - 3, labels[1]);
-                Nadadores TercerJugador = new Nadadores("TercerJugador", ANCHO - 3, labels[2]);
-                Nadadores PrimerJugador = new Nadadores("PrimerJugador", ANCHO - 3, labels[3]);
-               Nadadores SegundoJugador = new Nadadores("SegundoJugador", ANCHO - 3, labels[4]);
+               
+               
+               
 
                 System.out.println(Lo);
-                PrimerJugador.start();
-                SegundoJugador.start();
+              
+                
                 QuintoJugador.start();
                 CuartoJugador.start();
-                TercerJugador.start();
-                
+              
                  
 
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -96,6 +89,6 @@ public class NadadoresHilos extends JFrame {
     
 
     public static void main(String[] args) {
-        NadadoresHilos nadadoresHilos = new NadadoresHilos();
+        NadadoresHilos4 nadadoresHilos = new NadadoresHilos4();
     }
 }

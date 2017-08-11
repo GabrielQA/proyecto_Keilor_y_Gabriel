@@ -5,22 +5,24 @@
  */
 package NuevaNadadores;
 
+import static java.lang.Thread.yield;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 /**
  *
  * @author GABRIEL-PC
  */
-public class Nadadores extends Thread{
+public class Nadadores3 extends Thread{
+     
     int Lo = (int) (Math.random() * 5);
     String nombre;
     int limite;
     JLabel label;
     
     
-    public Nadadores(String nombre, int limite,JLabel label) {
+    public Nadadores3(String nombre, int limite,JLabel label) {
         this.nombre = nombre;
         this.limite = limite;
         this.label= label;
@@ -43,4 +45,3 @@ public class Nadadores extends Thread{
     }
    
 }
-
