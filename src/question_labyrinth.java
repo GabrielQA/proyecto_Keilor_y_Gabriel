@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 
 /*
@@ -6,7 +8,6 @@ import javax.swing.ImageIcon;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author keilor
@@ -18,7 +19,7 @@ public class question_labyrinth extends javax.swing.JFrame {
      */
     public question_labyrinth() {
         initComponents();
-         setIconImage(new ImageIcon(getClass().getResource("/Imageneskeilor/Controller-1.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imageneskeilor/Controller-1.png")).getImage());
     }
 
     /**
@@ -35,6 +36,11 @@ public class question_labyrinth extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
@@ -50,6 +56,25 @@ public class question_labyrinth extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            System.out.println("Arriba");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            System.out.println("Abajo");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            System.out.println("derecha");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            System.out.println("Izquierda");
+        }
+
+
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments
@@ -85,6 +110,7 @@ public class question_labyrinth extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
