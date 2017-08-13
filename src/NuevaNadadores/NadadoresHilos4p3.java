@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package NuevaNadadores;
-
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,26 +21,35 @@ import javax.swing.JTextPane;
  *
  * @author GABRIEL-PC
  */
-public class NadadoresHilos3 extends JFrame {
-     JPanel[] Panelp;
+public class NadadoresHilos4p3 extends JFrame {
+    
+  
+    int cont=0;
+        
+        
+        
+        
+    JPanel[] Panelp;
     
     JPanel[] paneles;
+    
     JLabel[] labels;
-    String[] nombres = {"JosueQA", "FernandaSE", "RicardoRA"};
+    
+    String[] nombres = {"JosueQA","RicardoRA"};
     JButton boton;
     JTextPane a;
     
 
     int ANCHO = 1100;
 
-    public NadadoresHilos3() {
+    public NadadoresHilos4p3() {
         setLayout(new GridLayout(0, 1));
        
         
-        paneles = new JPanel[3];
-        labels = new JLabel[3];
+        paneles = new JPanel[2];
+        labels = new JLabel[2];
         
-        for (int n = 0; n < 3; n++) {
+        for (int n = 0; n < 2; n++) {
             paneles[n] = new JPanel();
             add(paneles[n]);
             
@@ -62,7 +71,7 @@ public class NadadoresHilos3 extends JFrame {
                 
                 Nadadores QuintoJugador = new Nadadores("QuintoJugador", ANCHO - 3, labels[0]);
                 Nadadores CuartoJugador = new Nadadores("CuartoJugador", ANCHO - 3, labels[1]);
-                Nadadores TercerJugador = new Nadadores("TercerJugador", ANCHO - 3, labels[2]);
+               
                
                
 
@@ -71,8 +80,7 @@ public class NadadoresHilos3 extends JFrame {
                 
                 QuintoJugador.start();
                 CuartoJugador.start();
-                TercerJugador.start();
-                
+              
                  
 
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -90,6 +98,6 @@ public class NadadoresHilos3 extends JFrame {
     
 
     public static void main(String[] args) {
-        NadadoresHilos3 nadadoresHilos = new NadadoresHilos3();
+        NadadoresHilos4p2 nadadoresHilos = new NadadoresHilos4p2();
     }
 }

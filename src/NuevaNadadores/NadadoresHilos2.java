@@ -26,7 +26,7 @@ public class NadadoresHilos2 extends JFrame {
     
     JPanel[] paneles;
     JLabel[] labels;
-    String[] nombres = {"QuintoJugador", "CuartoJugador", "TercerJugador", "PrimerJugador"};
+    String[] nombres = {"JosueQA", "FernandaSE", "RicardoRA", "StefanyFC"};
     JButton boton;
     JTextPane a;
     

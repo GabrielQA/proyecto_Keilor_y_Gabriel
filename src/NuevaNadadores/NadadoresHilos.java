@@ -26,13 +26,13 @@ import javax.swing.JTextPane;
  * @author GABRIEL-PC
  */
 public class NadadoresHilos extends JFrame {
+    
     JPanel[] Panelp;
     
     JPanel[] paneles;
     JLabel[] labels;
     //JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA
     String[] nombres = {"JosueQA", "FernandaSE", "RicardoRA", "StefanyFC", "LoganNA"};
-    
     JButton boton;
     JTextPane a;
     

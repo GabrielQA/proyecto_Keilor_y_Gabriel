@@ -5,6 +5,7 @@
  */
 package NuevaNadadores;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,11 +23,20 @@ import javax.swing.JTextPane;
  * @author GABRIEL-PC
  */
 public class NadadoresHilos4 extends JFrame {
-     JPanel[] Panelp;
+    
+  
+    int cont=0;
+        
+        
+        
+        
+    JPanel[] Panelp;
     
     JPanel[] paneles;
+    
     JLabel[] labels;
-    String[] nombres = {"QuintoJugador", "CuartoJugador"};
+    
+    String[] nombres = {"JosueQA","FernandaSE"};
     JButton boton;
     JTextPane a;
     

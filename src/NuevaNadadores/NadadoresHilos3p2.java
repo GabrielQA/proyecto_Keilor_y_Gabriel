@@ -9,10 +9,6 @@ package NuevaNadadores;
  *
  * @author GABRIEL-PC
  */
-public class Reloj  extends javax.swing.JFrame{
-    public Reloj (){
-        initComponents();
-        
-    }
+public class NadadoresHilos3p2 {
     
 }
