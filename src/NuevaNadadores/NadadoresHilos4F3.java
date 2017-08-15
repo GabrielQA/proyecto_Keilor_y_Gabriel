@@ -3,6 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package NuevaNadadores;
 
 import java.awt.Color;
@@ -22,7 +27,7 @@ import javax.swing.JTextPane;
  *
  * @author GABRIEL-PC
  */
-public class NadadoresHilos4 extends JFrame {
+public class NadadoresHilos4F3 extends JFrame {
  QA variable = new QA();
  int nueva = variable.AA;
   
@@ -36,14 +41,14 @@ public class NadadoresHilos4 extends JFrame {
     
     JLabel[] labels;
     
-    String[] nombres = {"JosueQA","FernandaSE"};
+    String[] nombres = {"FernandaSE","LoganNA"};
     JButton boton;
     JTextPane a;
     
 
     int ANCHO = 1100;
 
-    public NadadoresHilos4() {
+    public NadadoresHilos4F3() {
       
 
         setLayout(new GridLayout(0, 1));
@@ -101,6 +106,6 @@ public class NadadoresHilos4 extends JFrame {
     
 
     public static void main(String[] args) {
-        NadadoresHilos4 nadadoresHilos = new NadadoresHilos4();
+        NadadoresHilos4F3 nadadoresHilos = new NadadoresHilos4F3();
     }
 }

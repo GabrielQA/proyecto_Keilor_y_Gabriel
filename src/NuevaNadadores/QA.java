@@ -17,6 +17,8 @@ import javax.swing.JPanel;
  */
 public class QA extends javax.swing.JFrame {
 
+    int AA;
+
     /**
      * Creates new form QA
      */
@@ -94,9 +96,9 @@ public class QA extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         int Insertar1 = Integer.parseInt(JOptionPane.showInputDialog("¡Cantidad de competidores!"));
-        int cont=0;
+        /*int cont = 0;
         String REq = "";
-        /*if (Insertar1 == 2) {
+        if (Insertar1 == 2) {
             int AA = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int AAA = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
 
@@ -117,34 +119,164 @@ public class QA extends javax.swing.JFrame {
             nadadoresHilos3.setVisible(true);
             }
         }*/
-
-        while(cont<=Insertar1-1){
-            int  AA = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
-             cont+=1;
-             REq+=AA;
-        }
- if (Insertar1 == 5) {
-                NadadoresHilos nadadoresHilos = new NadadoresHilos();
-                nadadoresHilos.setLocationRelativeTo(null);
-                nadadoresHilos.setVisible(true);
-            } else if (Insertar1 == 4) {
-                NadadoresHilos2 nadadoresHilos2 = new NadadoresHilos2();
-                nadadoresHilos2.setLocationRelativeTo(null);
-                nadadoresHilos2.setVisible(true);
-            } else if (Insertar1 == 3) {
-                NadadoresHilos3 nadadoresHilos3 = new NadadoresHilos3();
-                nadadoresHilos3.setLocationRelativeTo(null);
-                nadadoresHilos3.setVisible(true);
-            } else if (Insertar1 == 2) {
+        if (Insertar1 == 2) {
+            int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            if (A1 == 1 && A2 == 2 || A2 == 2 && A1 == 1) {
                 NadadoresHilos4 nadadoresHilos3 = new NadadoresHilos4();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            } else if (Insertar1 > 5) {
-                JOptionPane.showMessageDialog(null, "Competidores maxima 5", "Mm", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "Competidores minimos 2", "Mm", JOptionPane.INFORMATION_MESSAGE);
-            
+            } else if (A1 == 1 && A2 == 3 || A1 == 3 && A2 == 1) {
+                NadadoresHilos4p2 nadadoresHilos3 = new NadadoresHilos4p2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 1 && A2 == 4 || A1 == 4 && A2 == 1) {
+                NadadoresHilos4p3 nadadoresHilos3 = new NadadoresHilos4p3();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 1 && A2 == 5 || A1 == 5 && A2 == 1) {
+                NadadoresHilos4p4 nadadoresHilos3 = new NadadoresHilos4p4();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 2 && A2 == 3 || A1 == 3 && A2 == 2) {
+                NadadoresHilos4F1 nadadoresHilos3 = new NadadoresHilos4F1();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 2 && A2 == 4 || A1 == 4 && A2 == 2) {
+                NadadoresHilos4F2 nadadoresHilos3 = new NadadoresHilos4F2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 2 && A2 == 5 || A1 == 5 && A2 == 2) {
+                NadadoresHilos4F3 nadadoresHilos3 = new NadadoresHilos4F3();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 3 && A2 == 4 || A1 == 4 && A2 == 2) {
+                NadadoresHilos4R1 nadadoresHilos3 = new NadadoresHilos4R1();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 3 && A2 == 5 || A1 == 5 && A2 == 2) {
+                NadadoresHilos4R2 nadadoresHilos3 = new NadadoresHilos4R2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (A1 == 4 && A2 == 5 || A1 == 5 && A2 == 4) {
+                NadadoresHilos4L1 nadadoresHilos3 = new NadadoresHilos4L1();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
             }
+
+        } else if (Insertar1 == 3) {
+            int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A3 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+
+            if (A1==1 && A2==2 && A3==3 || A1==2 && A2==3 && A3==1 || A1==3 && A2==1 && A3==2) {
+                NadadoresHilos3 nadadoresHilos3 = new NadadoresHilos3();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==1 && A2==2 && A3==4 || A1==2 && A2==4 && A3==1 || A1==4 && A2==1 && A3==2){
+                 NadadoresHilos3p2 nadadoresHilos3 = new NadadoresHilos3p2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==1 && A2==2 && A3==5 || A1==2 && A2==5 && A3==1 || A1==5 && A2==1 && A3==2){
+                 NadadoresHilos3p3 nadadoresHilos3 = new NadadoresHilos3p3();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==1 && A2==3 && A3==4 || A1==3 && A2==4 && A3==1 || A1==4 && A2==1 && A3==3){
+                 NadadoresHilos3p4 nadadoresHilos3 = new NadadoresHilos3p4();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==1 && A2==3 && A3==5 || A1==3 && A2==5 && A3==1 || A1==5 && A2==1 && A3==3){
+                 NadadoresHilos3p5 nadadoresHilos3 = new NadadoresHilos3p5();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==1 && A2==5 && A3==4 || A1==5 && A2==4 && A3==1 || A1==4 && A2==1 && A3==5){
+                 NadadoresHilos3p6 nadadoresHilos3 = new NadadoresHilos3p6();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==2 && A2==3 && A3==4 || A1==3 && A2==4 && A3==2 || A1==4 && A2==2 && A3==3){
+                 NadadoresHilos3F1 nadadoresHilos3 = new NadadoresHilos3F1();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==2 && A2==3 && A3==5 || A1==3 && A2==5 && A3==2 || A1==5 && A2==2 && A3==3){
+                NadadoresHilos3F2 nadadoresHilos3 = new NadadoresHilos3F2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==2 && A2==4 && A3==5 || A1==4 && A2==5 && A3==2 || A1==5 && A2==2 && A3==4){
+                NadadoresHilos3F3 nadadoresHilos3 = new NadadoresHilos3F3();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }else if(A1==3 && A2==4 && A3==5 || A1==5 && A2==3 && A3==4 || A1==4 && A2==5 && A3==3){
+                NadadoresHilos3R1 nadadoresHilos3 = new NadadoresHilos3R1();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }
+        } else if (Insertar1 == 4) {
+            int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A3 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            int A4=Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+            
+            if(A1==1 && A2==2 && A3==3 && A4==4 || A1==2 && A2==1 && A3==4 && A4==3 || A1==4 && A2==3 && A3==1 && A4==2 || A1==3 && A2==4 && A3==2 && A4==1){
+            NadadoresHilos2 nadadoresHilos2 = new NadadoresHilos2();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true); 
+            }else if(A1==1 && A2==2 && A3==3 && A4==5 || A1==2 && A2==1 && A3==5 && A4==3 || A1==5 && A2==3 && A3==1 && A4==2 || A1==3 && A2==5 && A3==2 && A4==1){
+            NadadoresHilos2p2 nadadoresHilos2 = new NadadoresHilos2p2();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true);    
+            }else if(1==1 && A2==2 && A3==5 && A4==4 || A1==2 && A2==1 && A3==4 && A4==5 || A1==4 && A2==5 && A3==1 && A4==2 || A1==5 && A2==4 && A3==2 && A4==1){
+                NadadoresHilos2p3 nadadoresHilos2 = new NadadoresHilos2p3();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true);
+            }else if(1==1 && A2==3 && A3==5 && A4==4 || A1==3 && A2==1 && A3==4 && A4==5 || A1==4 && A2==5 && A3==1 && A4==3 || A1==5 && A2==4 && A3==3 && A4==1){
+                NadadoresHilos2p4 nadadoresHilos2 = new NadadoresHilos2p4();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true);
+            }else if(1==2 && A2==3 && A3==5 && A4==4 || A1==3 && A2==2 && A3==4 && A4==5 || A1==4 && A2==5 && A3==2 && A4==3 || A1==5 && A2==4 && A3==3 && A4==2){
+                NadadoresHilos2p5 nadadoresHilos2 = new NadadoresHilos2p5();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true);
+            }
+
+        } else if (Insertar1 == 5) {
+            NadadoresHilos nadadoresHilos = new NadadoresHilos();
+            nadadoresHilos.setLocationRelativeTo(null);
+            nadadoresHilos.setVisible(true);
+        }
+        /*while(cont<=Insertar1-1){
+             AA = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+             cont+=1;
+             REq+=AA;
+        }*/
+        /*if (Insertar1 == 5) {
+            NadadoresHilos nadadoresHilos = new NadadoresHilos();
+            nadadoresHilos.setLocationRelativeTo(null);
+            nadadoresHilos.setVisible(true);
+        } else if (Insertar1 == 4) {
+            NadadoresHilos2 nadadoresHilos2 = new NadadoresHilos2();
+            nadadoresHilos2.setLocationRelativeTo(null);
+            nadadoresHilos2.setVisible(true);
+        } else if (Insertar1 == 3) {
+            NadadoresHilos3 nadadoresHilos3 = new NadadoresHilos3();
+            nadadoresHilos3.setLocationRelativeTo(null);
+            nadadoresHilos3.setVisible(true);
+        } else if (Insertar1 == 2) {
+            if (AA == 1 && AA == 2) {
+                NadadoresHilos4 nadadoresHilos3 = new NadadoresHilos4();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            } else if (AA == 1 && AA == 3) {
+                NadadoresHilos4p2 nadadoresHilos3 = new NadadoresHilos4p2();
+                nadadoresHilos3.setLocationRelativeTo(null);
+                nadadoresHilos3.setVisible(true);
+            }
+
+        } else if (Insertar1 > 5) {
+            JOptionPane.showMessageDialog(null, "Competidores maxima 5", "Mm", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Competidores minimos 2", "Mm", JOptionPane.INFORMATION_MESSAGE);
+
+        }*/
 
     }//GEN-LAST:event_jButton20ActionPerformed
 
@@ -158,8 +290,8 @@ public class QA extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, "AL presionar el boton iniciar, se desplegara una pregunta de cuantos competidores van a establecerse en la carrera\nLa posicion de cada competidor ira al azar.\n"
-                + "\nCantidad Maxima de competidores 5\nCantidad Minima de competidores 2n\nUna vez haya visto la lista debe seleccionar "
-                + "los copetidores de acuerdo al numero indicado.", "Mm", JOptionPane.INFORMATION_MESSAGE);
+                + "\nCantidad Maxima de competidores 5\nCantidad Minima de competidores 2\nUna vez haya visto la lista debe seleccionar "
+                + "los copetidores de acuerdo al numero indicado.\n Una vez ya hayas seleccioando los competidores, se desplegará el inicio del juego para empezar a competir.", "Mm", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

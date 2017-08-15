@@ -22,7 +22,7 @@ import javax.swing.JTextPane;
  *
  * @author GABRIEL-PC
  */
-public class NadadoresHilos4 extends JFrame {
+public class NadadoresHilos4p4 extends JFrame {
  QA variable = new QA();
  int nueva = variable.AA;
   
@@ -36,14 +36,14 @@ public class NadadoresHilos4 extends JFrame {
     
     JLabel[] labels;
     
-    String[] nombres = {"JosueQA","FernandaSE"};
+    String[] nombres = {"JosueQA","LoganNA"};
     JButton boton;
     JTextPane a;
     
 
     int ANCHO = 1100;
 
-    public NadadoresHilos4() {
+    public NadadoresHilos4p4() {
       
 
         setLayout(new GridLayout(0, 1));
@@ -101,6 +101,6 @@ public class NadadoresHilos4 extends JFrame {
     
 
     public static void main(String[] args) {
-        NadadoresHilos4 nadadoresHilos = new NadadoresHilos4();
+        NadadoresHilos4p4 nadadoresHilos = new NadadoresHilos4p4();
     }
 }

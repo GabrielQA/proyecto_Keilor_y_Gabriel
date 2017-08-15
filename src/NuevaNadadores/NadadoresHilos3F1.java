@@ -5,7 +5,6 @@
  */
 package NuevaNadadores;
 
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,48 +21,37 @@ import javax.swing.JTextPane;
  *
  * @author GABRIEL-PC
  */
-public class NadadoresHilos4 extends JFrame {
- QA variable = new QA();
- int nueva = variable.AA;
-  
-    int cont=0;
-       
-        
-        
-    JPanel[] Panelp;
-    
+public class NadadoresHilos3F1 extends JFrame {
+     JPanel[] Panelp;
+
     JPanel[] paneles;
-    
     JLabel[] labels;
-    
-    String[] nombres = {"JosueQA","FernandaSE"};
+    String[] nombres = {"FernandaSE", "RicardoRA", "StefanyFC"};
     JButton boton;
     JTextPane a;
-    
+
 
     int ANCHO = 1100;
 
-    public NadadoresHilos4() {
-      
-
+    public NadadoresHilos3F1() {
         setLayout(new GridLayout(0, 1));
-       
-        
-        paneles = new JPanel[2];
-        labels = new JLabel[2];
-        
-        for (int n = 0; n < 2; n++) {
+
+
+        paneles = new JPanel[3];
+        labels = new JLabel[3];
+
+        for (int n = 0; n < 3; n++) {
             paneles[n] = new JPanel();
             add(paneles[n]);
-            
+
             labels[n] = new JLabel(nombres[n]);
             labels[n].setIcon(new ImageIcon(getClass().getResource(nombres[n] + ".gif")));
             paneles[n].add(labels[n]);
             labels[n].setLocation(0, 0);
-           
+
         }
         a = new JTextPane();
-        
+
         boton = new JButton("Iniciar");
         boton.addActionListener(new ActionListener() {
 
@@ -71,20 +59,21 @@ public class NadadoresHilos4 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null,"La competencia esta apunto de comenzar","Mensaje",JOptionPane.INFORMATION_MESSAGE);
                 int Lo = (int) (Math.random() * 7);
-                
+
                 Nadadores QuintoJugador = new Nadadores("QuintoJugador", ANCHO - 3, labels[0]);
                 Nadadores CuartoJugador = new Nadadores("CuartoJugador", ANCHO - 3, labels[1]);
-               
-               
-               
+                Nadadores TercerJugador = new Nadadores("TercerJugador", ANCHO - 3, labels[2]);
+
+
 
                 System.out.println(Lo);
-              
-                
+
+
                 QuintoJugador.start();
                 CuartoJugador.start();
-              
-                 
+                TercerJugador.start();
+
+
 
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
@@ -96,11 +85,11 @@ public class NadadoresHilos4 extends JFrame {
         setSize(ANCHO, 1000);
         setVisible(true);
     }
-    
-            
-    
+
+
+
 
     public static void main(String[] args) {
-        NadadoresHilos4 nadadoresHilos = new NadadoresHilos4();
+        NadadoresHilos3F1 nadadoresHilos = new NadadoresHilos3F1();
     }
 }

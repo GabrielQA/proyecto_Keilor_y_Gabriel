@@ -27,7 +27,7 @@ public class NadadoresHilos4p3 extends JFrame {
     int cont=0;
         
         
-        
+       
         
     JPanel[] Panelp;
     
@@ -35,7 +35,7 @@ public class NadadoresHilos4p3 extends JFrame {
     
     JLabel[] labels;
     
-    String[] nombres = {"JosueQA","RicardoRA"};
+    String[] nombres = {"JosueQA","StefanyFC"};
     JButton boton;
     JTextPane a;
     
