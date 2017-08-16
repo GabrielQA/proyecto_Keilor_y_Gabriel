@@ -3,8 +3,12 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,10 +23,13 @@ public class juego2 extends javax.swing.JFrame {
 
     private int columnas = 8;
     private int filas = 5;
-    private int personajecolumnas = 2;
-    private int personajefilas = 1;
+    private int personajecolumnas = 0;
+    private int personajefilas = 0;
     public static final int tamañocuadro = 60;
-    static String resultado= "";
+    static String resultado = "";
+    static List preguntas = new ArrayList();
+    static List listarespuestas = new ArrayList();
+    static int contador = 0;
 
     //Matriz logica
     private int[][] logica = new int[columnas][filas];
@@ -37,13 +44,13 @@ public class juego2 extends javax.swing.JFrame {
         initComponents();
         nuevamatriz();
         mostrarmatrizpanel();
-        preguntas_juego2 abrir = new preguntas_juego2();
-        abrir.setVisible(true);
+        iniciopreguntas();
+
     }
 
     private void nuevamatriz() {  // hacer la matriz temporal de modo aleatorio 
-        int[][] temp = {{(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
-        {3, (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
+        int[][] temp = {{3, (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
+        {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
@@ -51,6 +58,14 @@ public class juego2 extends javax.swing.JFrame {
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},};
         logica = temp;
+
+    }
+
+    private void iniciopreguntas() {
+        resultado = "";
+        jPanel1.setVisible(true);
+        llenar_listas();
+        imprimir_pregunta();
 
     }
 
@@ -124,9 +139,20 @@ public class juego2 extends javax.swing.JFrame {
     private void initComponents() {
 
         respuestas = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jppanelprincipal = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jbrverdadero = new javax.swing.JRadioButton();
+        jbrfalso = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);
@@ -153,6 +179,61 @@ public class juego2 extends javax.swing.JFrame {
             .addGap(0, 343, Short.MAX_VALUE)
         );
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setText("jLabel1");
+
+        buttonGroup1.add(jbrverdadero);
+        jbrverdadero.setText("Verdadero");
+
+        buttonGroup1.add(jbrfalso);
+        jbrfalso.setText("Falso");
+
+        jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(jbrverdadero))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(jbrfalso)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 81, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(74, 74, 74))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jbrverdadero)
+                .addGap(18, 18, 18)
+                .addComponent(jbrfalso)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,7 +241,9 @@ public class juego2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jppanelprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,6 +251,10 @@ public class juego2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jppanelprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -179,27 +266,100 @@ public class juego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyReleased
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+
         if (resultado.equals("Correcto")) {
             if (evt.getKeyCode() == KeyEvent.VK_UP) {
-                System.out.println("Arriba");
+                if (logica[personajecolumnas][personajefilas - 1] != objetos.pared) {
+                    logica[personajecolumnas][personajefilas - 1] = objetos.personaje;
+                    logica[personajecolumnas][personajefilas] = objetos.piso;
+                    grafica[personajecolumnas][personajefilas - 1].setIcon(imagenenmatriz(objetos.personaje));
+                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                    personajefilas--;
+                    iniciopreguntas();
+                }
             }
+
             if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-                System.out.println("Abajo");
+                if (logica[personajecolumnas][personajefilas + 1] != objetos.pared) {
+                    logica[personajecolumnas][personajefilas + 1] = objetos.personaje;
+                    logica[personajecolumnas][personajefilas] = objetos.piso;
+                    grafica[personajecolumnas][personajefilas + 1].setIcon(imagenenmatriz(objetos.personaje));
+                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                    personajefilas++;
+                    iniciopreguntas();
+
+                }
             }
             if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
-                System.out.println("derecha");
+                if (logica[personajecolumnas - 1][personajefilas] != objetos.pared) {
+                    logica[personajecolumnas - 1][personajefilas] = objetos.personaje;
+                    logica[personajecolumnas][personajefilas] = objetos.piso;
+                    grafica[personajecolumnas - 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                    personajecolumnas--;
+                    iniciopreguntas();
+
+                }
             }
             if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-                System.out.println("Izquierda");
+                if (logica[personajecolumnas + 1][personajefilas] != objetos.pared) {
+                    logica[personajecolumnas + 1][personajefilas] = objetos.personaje;
+                    logica[personajecolumnas][personajefilas] = objetos.piso;
+                    grafica[personajecolumnas + 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                    personajecolumnas++;
+                    iniciopreguntas();
+                }
             }
-        }
 
+        }
     }//GEN-LAST:event_formKeyPressed
 
     private void jppanelprincipalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jppanelprincipalKeyPressed
-        // TODO add your handling code here:
-        System.out.println(evt.getExtendedKeyCode());
+  
     }//GEN-LAST:event_jppanelprincipalKeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (jbrverdadero.isSelected()) {
+            if (listarespuestas.get(contador - 1) == "Verdadero") {
+                JOptionPane.showMessageDialog(rootPane, "Correcto");
+                juego2.resultado = "Correcto";
+                jPanel1.setVisible(false);
+
+            }
+
+        }
+        if (jbrfalso.isSelected()) {
+            if (listarespuestas.get(contador - 1) == "Falso") {
+                JOptionPane.showMessageDialog(rootPane, "Correcto");
+                juego2.resultado = "Correcto";
+                jPanel1.setVisible(false);
+
+            }
+
+        }
+        if (jbrverdadero.isSelected()) {
+            if (listarespuestas.get(contador - 1) == "Falso") {
+                JOptionPane.showMessageDialog(rootPane, "Incorrecto");
+
+            }
+
+        }
+        if (jbrfalso.isSelected()) {
+            if (listarespuestas.get(contador - 1) == "Incorrecto") {
+                JOptionPane.showMessageDialog(rootPane, "Incorrecto");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        
+        if(evt.getSource()==jButton1){
+         System.out.println("2342");
+    }
+     
+    }//GEN-LAST:event_formMouseClicked
 
     /**
      * @param args the command line arguments
@@ -244,7 +404,26 @@ public class juego2 extends javax.swing.JFrame {
         });
     }
 
+    public void llenar_listas() {
+        preguntas.add("Me llamo keilor");
+        preguntas.add("Me apellido es rr");
+        listarespuestas.add("Verdadero");
+        listarespuestas.add("Falso");
+    }
+
+    private void imprimir_pregunta() {
+        String strCadena = "hola mundo";
+        jLabel1.setText((String) preguntas.get(contador));
+        contador++;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jbrfalso;
+    private javax.swing.JRadioButton jbrverdadero;
     private javax.swing.JPanel jppanelprincipal;
     private javax.swing.ButtonGroup respuestas;
     // End of variables declaration//GEN-END:variables
