@@ -12,4 +12,5 @@ public class objetos {
     public static final int piso = 1;
     public static final int pared = 2;
     public static final int personaje = 3;
+     public static final int comodin = 4;
 }

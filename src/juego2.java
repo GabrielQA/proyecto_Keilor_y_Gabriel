@@ -30,6 +30,7 @@ public class juego2 extends javax.swing.JFrame {
     static List preguntas = new ArrayList();
     static List listarespuestas = new ArrayList();
     static int contador = 0;
+    static int variabledelcomodin = 0;
 
     //Matriz logica
     private int[][] logica = new int[columnas][filas];
@@ -49,7 +50,7 @@ public class juego2 extends javax.swing.JFrame {
     }
 
     private void nuevamatriz() {  // hacer la matriz temporal de modo aleatorio 
-        int[][] temp = {{3, (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
+        int[][] temp = {{3, 4, (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
         {(int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1), (int) (Math.random() * 2 + 1)},
@@ -93,40 +94,11 @@ public class juego2 extends javax.swing.JFrame {
 
             case objetos.piso:
                 return new ImageIcon(getClass().getResource("/Imageneskeilor/03.jpg"));
+            case objetos.comodin:
+                return new ImageIcon(getClass().getResource("/Imageneskeilor/4.jpg"));
 
         }
         return null;
-    }
-
-    private void Teclado() {
-        jppanelprincipal.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_UP) {
-                    System.out.println("Arriba");
-                }
-                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                    System.out.println("Abajo");
-                }
-                if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-                    System.out.println("derecha");
-                }
-                if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-                    System.out.println("Izquierda");
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-
     }
 
     /**
@@ -269,54 +241,100 @@ public class juego2 extends javax.swing.JFrame {
 
         if (resultado.equals("Correcto")) {
             if (evt.getKeyCode() == KeyEvent.VK_UP) {
-                if (logica[personajecolumnas][personajefilas - 1] != objetos.pared) {
-                    logica[personajecolumnas][personajefilas - 1] = objetos.personaje;
-                    logica[personajecolumnas][personajefilas] = objetos.piso;
-                    grafica[personajecolumnas][personajefilas - 1].setIcon(imagenenmatriz(objetos.personaje));
-                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
-                    personajefilas--;
-                    iniciopreguntas();
+                if (logica[personajecolumnas][personajefilas - 1] == objetos.comodin) {
+                    if (logica[personajecolumnas][personajefilas - 1] != objetos.pared) {
+                        logica[personajecolumnas][personajefilas - 1] = objetos.personaje;
+                        logica[personajecolumnas][personajefilas] = objetos.piso;
+                        grafica[personajecolumnas][personajefilas - 1].setIcon(imagenenmatriz(objetos.personaje));
+                        grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                        personajefilas--;
+                        comodin jFrame = new comodin();
+                        jFrame.setVisible(true);
+                    }
                 }
-            }
+                    if (logica[personajecolumnas][personajefilas - 1] != objetos.pared) {
+                        logica[personajecolumnas][personajefilas - 1] = objetos.personaje;
+                        logica[personajecolumnas][personajefilas] = objetos.piso;
+                        grafica[personajecolumnas][personajefilas - 1].setIcon(imagenenmatriz(objetos.personaje));
+                        grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                        personajefilas--;
+                        iniciopreguntas();
+                    }
+                }
 
-            if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-                if (logica[personajecolumnas][personajefilas + 1] != objetos.pared) {
-                    logica[personajecolumnas][personajefilas + 1] = objetos.personaje;
-                    logica[personajecolumnas][personajefilas] = objetos.piso;
-                    grafica[personajecolumnas][personajefilas + 1].setIcon(imagenenmatriz(objetos.personaje));
-                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
-                    personajefilas++;
-                    iniciopreguntas();
+                if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+                    if (logica[personajecolumnas][personajefilas + 1] == objetos.comodin) {
+                        if (logica[personajecolumnas][personajefilas + 1] != objetos.pared) {
+                            logica[personajecolumnas][personajefilas + 1] = objetos.personaje;
+                            logica[personajecolumnas][personajefilas] = objetos.piso;
+                            grafica[personajecolumnas][personajefilas + 1].setIcon(imagenenmatriz(objetos.personaje));
+                            grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                            personajefilas++;
+
+                            comodin jFrame = new comodin();
+                            jFrame.setVisible(true);
+
+                        }
+                    }
+                    if (logica[personajecolumnas][personajefilas + 1] != objetos.pared) {
+                        logica[personajecolumnas][personajefilas + 1] = objetos.personaje;
+                        logica[personajecolumnas][personajefilas] = objetos.piso;
+                        grafica[personajecolumnas][personajefilas + 1].setIcon(imagenenmatriz(objetos.personaje));
+                        grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                        personajefilas++;
+                        iniciopreguntas();
+
+                    }
+                }
+                if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+                    if (logica[personajecolumnas - 1][personajefilas] == objetos.comodin) {
+                        if (logica[personajecolumnas - 1][personajefilas] != objetos.pared) {
+                            logica[personajecolumnas - 1][personajefilas] = objetos.personaje;
+                            logica[personajecolumnas][personajefilas] = objetos.piso;
+                            grafica[personajecolumnas - 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                            grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                            personajecolumnas--;
+                            comodin jFrame = new comodin();
+                            jFrame.setVisible(true);
+                        }
+                    }
+                        if (logica[personajecolumnas - 1][personajefilas] != objetos.pared) {
+                            logica[personajecolumnas - 1][personajefilas] = objetos.personaje;
+                            logica[personajecolumnas][personajefilas] = objetos.piso;
+                            grafica[personajecolumnas - 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                            grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                            personajecolumnas--;
+                            iniciopreguntas();
+
+                        }
+                    }
+                    if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+                        if (logica[personajecolumnas + 1][personajefilas] != objetos.pared) {
+                            if (logica[personajecolumnas + 1][personajefilas] != objetos.pared) {
+                                logica[personajecolumnas + 1][personajefilas] = objetos.personaje;
+                                logica[personajecolumnas][personajefilas] = objetos.piso;
+                                grafica[personajecolumnas + 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                                grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                                personajecolumnas++;
+                                comodin jFrame = new comodin();
+                                jFrame.setVisible(true);
+                            }
+                        }
+                        if (logica[personajecolumnas + 1][personajefilas] != objetos.pared) {
+                            logica[personajecolumnas + 1][personajefilas] = objetos.personaje;
+                            logica[personajecolumnas][personajefilas] = objetos.piso;
+                            grafica[personajecolumnas + 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
+                            grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
+                            personajecolumnas++;
+                            iniciopreguntas();
+                        }
+                    }
 
                 }
-            }
-            if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
-                if (logica[personajecolumnas - 1][personajefilas] != objetos.pared) {
-                    logica[personajecolumnas - 1][personajefilas] = objetos.personaje;
-                    logica[personajecolumnas][personajefilas] = objetos.piso;
-                    grafica[personajecolumnas - 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
-                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
-                    personajecolumnas--;
-                    iniciopreguntas();
-
-                }
-            }
-            if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-                if (logica[personajecolumnas + 1][personajefilas] != objetos.pared) {
-                    logica[personajecolumnas + 1][personajefilas] = objetos.personaje;
-                    logica[personajecolumnas][personajefilas] = objetos.piso;
-                    grafica[personajecolumnas + 1][personajefilas].setIcon(imagenenmatriz(objetos.personaje));
-                    grafica[personajecolumnas][personajefilas].setIcon(imagenenmatriz(objetos.piso));
-                    personajecolumnas++;
-                    iniciopreguntas();
-                }
-            }
-
-        }
     }//GEN-LAST:event_formKeyPressed
 
     private void jppanelprincipalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jppanelprincipalKeyPressed
-  
+
     }//GEN-LAST:event_jppanelprincipalKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -354,11 +372,11 @@ public class juego2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        
-        if(evt.getSource()==jButton1){
-         System.out.println("2342");
-    }
-     
+
+        if (evt.getSource() == jButton1) {
+            System.out.println("2342");
+        }
+
     }//GEN-LAST:event_formMouseClicked
 
     /**
@@ -415,6 +433,10 @@ public class juego2 extends javax.swing.JFrame {
         String strCadena = "hola mundo";
         jLabel1.setText((String) preguntas.get(contador));
         contador++;
+    }
+
+    public static void close() {
+        System.exit(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
