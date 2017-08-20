@@ -5,6 +5,7 @@
  */
 package NuevaNadadores;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -16,6 +17,8 @@ import javax.swing.JPanel;
  * @author GABRIEL-PC
  */
 public class QA extends javax.swing.JFrame {
+
+    ArrayList<String> Lista = new ArrayList();
 
     int AA;
 
@@ -35,11 +38,7 @@ public class QA extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
@@ -47,30 +46,13 @@ public class QA extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton21.setText("J A");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        jButton24.setText("Competidores");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                jButton24ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 70, 30));
-
-        jButton22.setText("J B");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 60, 30));
-
-        jButton23.setText("J D");
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 60, 30));
-
-        jButton24.setText("J E");
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 60, 30));
-
-        jButton25.setText("J C");
-        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 60, 30));
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 140, 30));
 
         jButton1.setText("Instrucciones");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,10 +101,12 @@ public class QA extends javax.swing.JFrame {
             nadadoresHilos3.setVisible(true);
             }
         }*/
-        if (Insertar1 == 2) {
+            if(Insertar1==1){
+                  JOptionPane.showMessageDialog(null,"Cantidad minima 2","MM", JOptionPane.INFORMATION_MESSAGE);
+            }else if(Insertar1 == 2) {
             int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
-            if (A1 == 1 && A2 == 2 || A2 == 2 && A1 == 1) {
+            if (A1 == 1 && A2 == 2 || A1 == 2 && A2 == 1) {
                 NadadoresHilos4 nadadoresHilos3 = new NadadoresHilos4();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
@@ -135,9 +119,9 @@ public class QA extends javax.swing.JFrame {
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
             } else if (A1 == 1 && A2 == 5 || A1 == 5 && A2 == 1) {
-                NadadoresHilos4p4 nadadoresHilos3 = new NadadoresHilos4p4();
-                nadadoresHilos3.setLocationRelativeTo(null);
-                nadadoresHilos3.setVisible(true);
+                NadadoresHilos4p4 nadadoresHilosqwe = new NadadoresHilos4p4();
+                nadadoresHilosqwe.setLocationRelativeTo(null);
+                nadadoresHilosqwe.setVisible(true);
             } else if (A1 == 2 && A2 == 3 || A1 == 3 && A2 == 2) {
                 NadadoresHilos4F1 nadadoresHilos3 = new NadadoresHilos4F1();
                 nadadoresHilos3.setLocationRelativeTo(null);
@@ -165,47 +149,61 @@ public class QA extends javax.swing.JFrame {
             }
 
         } else if (Insertar1 == 3) {
+            /*
+            String A=JOptionPane.showInputDialog("Lista de Competidores"+Lista+"\nA-Agregar\nB-Eliminar\nC-Continuar");
+            if(A==A){
+            String ABC=JOptionPane.showInputDialog(Lista);
+            String V=JOptionPane.showInputDialog("Agregar competidor");
+            Lista.add(V);
+            
+                System.out.println(Lista);
+            }else if(A=="B"){
+            String ABC=JOptionPane.showInputDialog(Lista);
+            String V=JOptionPane.showInputDialog("Eliminar competidor");
+            Lista.remove(V);
+            System.out.println(Lista);
+             */
             int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int A3 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
 
-            if (A1==1 && A2==2 && A3==3 || A1==2 && A2==3 && A3==1 || A1==3 && A2==1 && A3==2) {
+            if (A1 == 1 && A2 == 2 && A3 == 3 ||A1 == 1 && A2 == 3 && A3 ==2  || A1 == 2 && A2 == 3 && A3 == 1 || A1 == 2 && A2 == 1 && A3 == 3 || A1 == 3 && A2 == 1 && A3 == 2 || A1 == 3 && A2 == 2 && A3 == 1) {
                 NadadoresHilos3 nadadoresHilos3 = new NadadoresHilos3();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==1 && A2==2 && A3==4 || A1==2 && A2==4 && A3==1 || A1==4 && A2==1 && A3==2){
-                 NadadoresHilos3p2 nadadoresHilos3 = new NadadoresHilos3p2();
+            } else if (A1 == 1 && A2 == 2 && A3 == 4 || A1 == 1 && A2 == 4 && A3 == 2 || A1 == 2 && A2 == 4 && A3 == 1 || A1 == 2 && A2 == 1 && A3 == 4 || A1 == 4 && A2 == 1 && A3 == 2|| A1 == 4 && A2 == 2 && A3 == 1) {
+                NadadoresHilos3p2 nadadoresHilos3 = new NadadoresHilos3p2();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==1 && A2==2 && A3==5 || A1==2 && A2==5 && A3==1 || A1==5 && A2==1 && A3==2){
-                 NadadoresHilos3p3 nadadoresHilos3 = new NadadoresHilos3p3();
+            } else if (A1 == 1 && A2 == 2 && A3 == 5 || A1 == 1 && A2 == 5 && A3 == 2|| A1 == 2 && A2 == 5 && A3 == 1 || A1 == 2 && A2 == 1 && A3 == 5|| A1 == 5 && A2 == 1 && A3 == 2|| A1 == 5 && A2 == 2 && A3 == 1) {
+                NadadoresHilos3p3 nadadoresHilos3 = new NadadoresHilos3p3();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==1 && A2==3 && A3==4 || A1==3 && A2==4 && A3==1 || A1==4 && A2==1 && A3==3){
-                 NadadoresHilos3p4 nadadoresHilos3 = new NadadoresHilos3p4();
+            } else if (A1 == 1 && A2 == 3 && A3 == 4  || A1 == 1 && A2 == 4 && A3 == 3|| A1 == 3 && A2 == 4 && A3 == 1|| A1 == 3 && A2 == 1 && A3 == 4 || A1 == 4 && A2 == 1 && A3 == 3|| A1 == 4 && A2 == 3 && A3 == 1) {
+                NadadoresHilos3p4 nadadoresHilos3 = new NadadoresHilos3p4();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==1 && A2==3 && A3==5 || A1==3 && A2==5 && A3==1 || A1==5 && A2==1 && A3==3){
-                 NadadoresHilos3p5 nadadoresHilos3 = new NadadoresHilos3p5();
+            } else if (A1 == 1 && A2 == 3 && A3 == 5 ||A1 == 1 && A2 == 5 && A3 == 3|| A1 == 3 && A2 == 5 && A3 == 1|| A1 == 3 && A2 == 1 && A3 == 5 || A1 == 5 && A2 == 1 && A3 == 3|| A1 == 5 && A2 == 3 && A3 == 1) {
+                NadadoresHilos3p5 nadadoresHilos3 = new NadadoresHilos3p5();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==1 && A2==5 && A3==4 || A1==5 && A2==4 && A3==1 || A1==4 && A2==1 && A3==5){
-                 NadadoresHilos3p6 nadadoresHilos3 = new NadadoresHilos3p6();
+            } else if (A1 == 1 && A2 == 5 && A3 == 4 ||A1 == 1 && A2 == 4 && A3 == 5|| A1 == 5 && A2 == 4 && A3 == 1 ||A1 == 5 && A2 == 1 && A3 == 4 || A1 == 4 && A2 == 1 && A3 == 5|| A1 == 4 && A2 == 5 && A3 == 1) {
+                NadadoresHilos3p6 nadadoresHilos3 = new NadadoresHilos3p6();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==2 && A2==3 && A3==4 || A1==3 && A2==4 && A3==2 || A1==4 && A2==2 && A3==3){
-                 NadadoresHilos3F1 nadadoresHilos3 = new NadadoresHilos3F1();
+            } else if (A1 == 2 && A2 == 3 && A3 == 4||A1 == 2 && A2 == 4 && A3 == 3 || A1 == 3 && A2 == 4 && A3 == 2 || A1 == 3 && A2 == 2 && A3 == 4 || A1 == 4 && A2 == 2 && A3 == 3|| A1 == 4 && A2 == 3 && A3 == 2) {
+                NadadoresHilos3F1 nadadoresHilos3 = new NadadoresHilos3F1();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==2 && A2==3 && A3==5 || A1==3 && A2==5 && A3==2 || A1==5 && A2==2 && A3==3){
+            } else if (A1 == 2 && A2 == 3 && A3 == 5||A1 == 2 && A2 == 5 && A3 == 3 || A1 == 3 && A2 == 5 && A3 == 2|| A1 == 3 && A2 == 2 && A3 == 5 || A1 == 5 && A2 == 2 && A3 == 3|| A1 == 5 && A2 == 3 && A3 == 2) {
                 NadadoresHilos3F2 nadadoresHilos3 = new NadadoresHilos3F2();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==2 && A2==4 && A3==5 || A1==4 && A2==5 && A3==2 || A1==5 && A2==2 && A3==4){
+            } else if (A1 == 2 && A2 == 4 && A3 == 5||A1 == 2 && A2 == 5 && A3 == 4 || A1 == 4 && A2 == 5 && A3 == 2 ||A3 == 4 || A1 == 4 && A2 == 2 && A3 == 5|| A1 == 5 && A2 == 2 && A3 == 4||A1 == 5 && A2 == 4 && A3 == 2) {
                 NadadoresHilos3F3 nadadoresHilos3 = new NadadoresHilos3F3();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
-            }else if(A1==3 && A2==4 && A3==5 || A1==5 && A2==3 && A3==4 || A1==4 && A2==5 && A3==3){
+            } else if (A1 == 3 && A2 == 4 && A3 == 5 ||A1 == 3 && A2 == 5 && A3 == 4 || A1 == 5 && A2 == 3 && A3 == 4|| A1 == 5 && A2 == 4 && A3 == 3 || A1 == 4 && A2 == 5 && A3 == 3|| A1 == 4 && A2 == 3 && A3 == 5) {
                 NadadoresHilos3R1 nadadoresHilos3 = new NadadoresHilos3R1();
                 nadadoresHilos3.setLocationRelativeTo(null);
                 nadadoresHilos3.setVisible(true);
@@ -214,28 +212,29 @@ public class QA extends javax.swing.JFrame {
             int A1 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int A2 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
             int A3 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
-            int A4=Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
-            
-            if(A1==1 && A2==2 && A3==3 && A4==4 || A1==2 && A2==1 && A3==4 && A4==3 || A1==4 && A2==3 && A3==1 && A4==2 || A1==3 && A2==4 && A3==2 && A4==1){
-            NadadoresHilos2 nadadoresHilos2 = new NadadoresHilos2();
-            nadadoresHilos2.setLocationRelativeTo(null);
-            nadadoresHilos2.setVisible(true); 
-            }else if(A1==1 && A2==2 && A3==3 && A4==5 || A1==2 && A2==1 && A3==5 && A4==3 || A1==5 && A2==3 && A3==1 && A4==2 || A1==3 && A2==5 && A3==2 && A4==1){
-            NadadoresHilos2p2 nadadoresHilos2 = new NadadoresHilos2p2();
-            nadadoresHilos2.setLocationRelativeTo(null);
-            nadadoresHilos2.setVisible(true);    
-            }else if(1==1 && A2==2 && A3==5 && A4==4 || A1==2 && A2==1 && A3==4 && A4==5 || A1==4 && A2==5 && A3==1 && A4==2 || A1==5 && A2==4 && A3==2 && A4==1){
+            int A4 = Integer.parseInt(JOptionPane.showInputDialog("Lista de Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA\nIngrese el numero del competidor que va a participar."));
+
+            if (A1 == 1 && A2 == 2 && A3 == 3 && A4 == 4 ||A1 == 1 && A2 == 2 && A3 == 4 && A4 == 3 || A1 == 2 && A2 == 1 && A3 == 4 && A4 == 3|| A1 == 2 && A2 == 1 && A3 == 3 && A4 == 4 || A1 == 4 && A2 == 3 && A3 == 1 && A4 == 2 || A1 == 4 && A2 == 3 && A3 == 2 && A4 == 1 || A1 == 3 && A2 == 4 && A3 == 2 && A4 == 1|| A1 == 3 && A2 == 4 && A3 == 1 && A4 == 2) {
+                NadadoresHilos2 nadadoresHilos2 = new NadadoresHilos2();
+                nadadoresHilos2.setLocationRelativeTo(null);
+                nadadoresHilos2.setVisible(true);
+                
+            }else if (A1 == 1 &&  A2 == 2 &&  A3 == 3 &&  A4 == 5 ||A1 == 1 &&  A2 == 2 &&  A3 == 5 &&  A4 == 3 || A1 == 2 && A2 == 1 && A3 == 5 && A4 == 3|| A1 == 2 && A2 == 1 && A3 == 3 && A4 == 5 || A1 == 5 && A2 == 3 && A3 == 1 && A4 == 2|| A1 == 5 && A2 == 3 && A3 == 2 && A4 == 1 || A1 == 3 && A2 == 5 && A3 == 2 && A4 == 1|| A1 == 3 && A2 == 5 && A3 == 1 && A4 == 2) {
+                NadadoresHilos2p2 nadadoresHilos0 = new NadadoresHilos2p2();
+                nadadoresHilos0.setLocationRelativeTo(null);
+                nadadoresHilos0.setVisible(true);
+            }else if (A1 == 1 && A2 == 2 && A3 == 4 && A4 == 5||A1 == 1 && A2 == 2 && A3 == 5 && A4 == 4 || A1 == 5 && A2 == 1 && A3 == 2 && A4 == 4|| A1 == 5 && A2 == 1 && A3 == 4 && A4 == 2 || A1 == 4 && A2 == 5 && A3 == 1 && A4 == 2 || A1 == 4 && A2 == 5 && A3 == 2 && A4 == 1|| A1 == 2 && A2 == 1 && A3 == 5 && A4 == 4||A1 == 2 && A2 == 1 && A3 == 4 && A4 == 5) {
                 NadadoresHilos2p3 nadadoresHilos2 = new NadadoresHilos2p3();
-            nadadoresHilos2.setLocationRelativeTo(null);
-            nadadoresHilos2.setVisible(true);
-            }else if(1==1 && A2==3 && A3==5 && A4==4 || A1==3 && A2==1 && A3==4 && A4==5 || A1==4 && A2==5 && A3==1 && A4==3 || A1==5 && A2==4 && A3==3 && A4==1){
+                nadadoresHilos2.setLocationRelativeTo(null);
+                nadadoresHilos2.setVisible(true);
+            }else if (A1 == 1 && A2 == 3 && A3 == 5 && A4 == 4||A1 == 1 && A2 == 3 && A3 == 4 && A4 == 5 || A1 == 3 && A2 == 1 && A3 == 4 && A4 == 5 || A1 == 3 && A2 == 1 && A3 == 5 && A4 == 4|| A1 == 4 && A2 == 5 && A3 == 1 && A4 == 3 || A1 == 4 && A2 == 5 && A3 == 3 && A4 == 1|| A1 == 5 && A2 == 4 && A3 == 3 && A4 == 1||A1 == 5 && A2 == 4 && A3 == 3 && A4 == 1) {
                 NadadoresHilos2p4 nadadoresHilos2 = new NadadoresHilos2p4();
-            nadadoresHilos2.setLocationRelativeTo(null);
-            nadadoresHilos2.setVisible(true);
-            }else if(1==2 && A2==3 && A3==5 && A4==4 || A1==3 && A2==2 && A3==4 && A4==5 || A1==4 && A2==5 && A3==2 && A4==3 || A1==5 && A2==4 && A3==3 && A4==2){
+                nadadoresHilos2.setLocationRelativeTo(null);
+                nadadoresHilos2.setVisible(true);
+            }else if (A1 == 2 && A2 == 3 && A3 == 5 && A4 == 4 ||A1 == 2 && A2 == 3 && A3 == 4 && A4 == 5 || A1 == 3 && A2 == 2 && A3 == 4 && A4 == 5|| A1 == 3 && A2 == 2 && A3 == 5 && A4 == 4 || A1 == 4 && A2 == 5 && A3 == 2 && A4 == 3 || A1 == 4 && A2 == 5 && A3 == 3 && A4 == 2 || A1 == 5 && A2 == 4 && A3 == 3 && A4 == 2|| A1 == 5 && A2 == 4 && A3 == 2 && A4 == 3) {
                 NadadoresHilos2p5 nadadoresHilos2 = new NadadoresHilos2p5();
-            nadadoresHilos2.setLocationRelativeTo(null);
-            nadadoresHilos2.setVisible(true);
+                nadadoresHilos2.setLocationRelativeTo(null);
+                nadadoresHilos2.setVisible(true);
             }
 
         } else if (Insertar1 == 5) {
@@ -248,7 +247,7 @@ public class QA extends javax.swing.JFrame {
              cont+=1;
              REq+=AA;
         }*/
-        /*if (Insertar1 == 5) {
+ /*if (Insertar1 == 5) {
             NadadoresHilos nadadoresHilos = new NadadoresHilos();
             nadadoresHilos.setLocationRelativeTo(null);
             nadadoresHilos.setVisible(true);
@@ -280,19 +279,17 @@ public class QA extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, "AL presionar el boton iniciar, se desplegara una pregunta de cuantos competidores van a establecerse en la carrera\nLa posicion de cada competidor ira al azar.\n"
                 + "\nCantidad Maxima de competidores 5\nCantidad Minima de competidores 2\nUna vez haya visto la lista debe seleccionar "
-                + "los copetidores de acuerdo al numero indicado.\n Una vez ya hayas seleccioando los competidores, se desplegará el inicio del juego para empezar a competir.", "Mm", JOptionPane.INFORMATION_MESSAGE);
+                + "los copetidores de acuerdo al numero indicado.\n Una vez ya hayas seleccioando los competidores, se desplegará el inicio del juego para empezar a competir."
+                + "\nAl darle iniciar al juego la competencia iniciara, una vez que todos haigan llegado a la meta, volveran a su posicion original ahi desides si volver a jugar otra\n"
+                + "oh ver las estadisticas.", "Mm", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        JOptionPane.showMessageDialog(null, "Competidores\n1-JosueQA\n2-FernandaSE\n3-RicardoRA\n4-StefanyFC\n5-LoganNA", "Mm", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton24ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,11 +331,7 @@ public class QA extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     private javax.swing.JLabel jLabel77;
     // End of variables declaration//GEN-END:variables
 }

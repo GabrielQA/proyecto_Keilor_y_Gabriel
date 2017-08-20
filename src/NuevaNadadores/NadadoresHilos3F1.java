@@ -5,6 +5,7 @@
  */
 package NuevaNadadores;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +23,10 @@ import javax.swing.JTextPane;
  * @author GABRIEL-PC
  */
 public class NadadoresHilos3F1 extends JFrame {
-     JPanel[] Panelp;
+
+    JPanel[] Panelp;
+    int Carreras = 0;
+    private javax.swing.JButton Estadisticas;
 
     JPanel[] paneles;
     JLabel[] labels;
@@ -30,12 +34,10 @@ public class NadadoresHilos3F1 extends JFrame {
     JButton boton;
     JTextPane a;
 
-
     int ANCHO = 1100;
 
     public NadadoresHilos3F1() {
         setLayout(new GridLayout(0, 1));
-
 
         paneles = new JPanel[3];
         labels = new JLabel[3];
@@ -47,33 +49,61 @@ public class NadadoresHilos3F1 extends JFrame {
             labels[n] = new JLabel(nombres[n]);
             labels[n].setIcon(new ImageIcon(getClass().getResource(nombres[n] + ".gif")));
             paneles[n].add(labels[n]);
+            paneles[n].setBackground(Color.blue);
             labels[n].setLocation(0, 0);
 
         }
         a = new JTextPane();
+        Estadisticas = new JButton("Estadisticas");
+        Estadisticas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                int A1 = Integer.parseInt(JOptionPane.showInputDialog("<------------------------Estadisticas------------------------->"
+                        + "\n1-Cantidad de veces que ha ganado cada competidor"
+                        + "\n2-Cantidad de Carrearas efectuadas"
+                        + "\n3-Competidor que ha ganado más veces"
+                        + "\n4-Competidor que ha perdido más veces"
+                        + "\n5-Cantidad de empates que se han registrado"));
 
+                switch (A1) {
+                    case 1:
+
+                    case 2:
+                        JOptionPane.showMessageDialog(null, "Cantidad de carreras efectuadas " + Carreras, "Estadisticas", JOptionPane.INFORMATION_MESSAGE);
+
+                    case 3:
+
+                    case 4:
+
+                    case 5:
+
+                    case 6:
+
+                }
+            }
+        });
+        add(Estadisticas);
         boton = new JButton("Iniciar");
         boton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"La competencia esta apunto de comenzar","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "La competencia esta apunto de comenzar", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
                 int Lo = (int) (Math.random() * 7);
+                Reloj nadadoresHilos3 = new Reloj();
 
+                nadadoresHilos3.setVisible(true);
+                Reloj btnPausar = new Reloj();
                 Nadadores QuintoJugador = new Nadadores("QuintoJugador", ANCHO - 3, labels[0]);
                 Nadadores CuartoJugador = new Nadadores("CuartoJugador", ANCHO - 3, labels[1]);
                 Nadadores TercerJugador = new Nadadores("TercerJugador", ANCHO - 3, labels[2]);
 
-
-
                 System.out.println(Lo);
-
 
                 QuintoJugador.start();
                 CuartoJugador.start();
                 TercerJugador.start();
-
-
+                Carreras += 1;
 
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
@@ -85,9 +115,6 @@ public class NadadoresHilos3F1 extends JFrame {
         setSize(ANCHO, 1000);
         setVisible(true);
     }
-
-
-
 
     public static void main(String[] args) {
         NadadoresHilos3F1 nadadoresHilos = new NadadoresHilos3F1();

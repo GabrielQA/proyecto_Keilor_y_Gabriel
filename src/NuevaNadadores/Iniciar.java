@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-
+//The beginning of everything where we play to see how it works the first game that would be the one of swimming
 /**
  *
  * @author GABRIEL-PC

@@ -14,6 +14,8 @@ import javax.swing.JLabel;
  *
  * @author GABRIEL-PC
  */
+//This Class just like all the ones that are named Swimmers
+//Besides adding a control that if each selected player reaches the goal stops
 public class Nadadores4 extends Thread{
      
     int Lo = (int) (Math.random() * 5);
@@ -37,7 +39,7 @@ public class Nadadores4 extends Thread{
                 Thread.sleep(Lo);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Nadadores.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            }System.out.println("El jugador " + nombre + "Ha llegado a la meta");
         }
         System.out.println("El jugador " + nombre + "Ha llegado a la meta");
         //JOptionPane.showMessageDialog(null,"El jugador "+nombre + "Ha llegado a la meta","MENSAJE", JOptionPane.INFORMATION_MESSAGE);

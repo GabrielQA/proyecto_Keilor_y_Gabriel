@@ -11,7 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JLabel;
 
 /**
- *
+ *This Class just like all the ones that are named Swimmers
+//Besides adding a control that if each selected player reaches the goal stops
  * @author GABRIEL-PC
  */
 public class Nadadores3 extends Thread{

@@ -14,8 +14,10 @@ import javax.swing.JLabel;
  *
  * @author GABRIEL-PC
  */
-public class Nadadores2 extends Thread{
-     
+//
+//This Class just like all the ones that are named Swimmers
+//Besides adding a control that if each selected player reaches the goal stops
+public class Nadadores2 extends Thread{    
     int Lo = (int) (Math.random() * 5);
     String nombre;
     int limite;
