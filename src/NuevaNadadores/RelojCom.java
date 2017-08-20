@@ -93,8 +93,7 @@ public class RelojCom extends javax.swing.JFrame {
         btnStop.setVisible(true);
         btnPausar.setEnabled(true);
         btnStop.setEnabled(true);
-        nextFocus();
-        t.stop();
+       
        
         
         

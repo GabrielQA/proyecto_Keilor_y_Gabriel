@@ -109,7 +109,6 @@ public class NadadoresHilos extends JFrame {
                 Nadadores RicardoRA = new Nadadores("RicardoRA", ANCHO - 3, labels[2]);
                 Nadadores StefanyFC = new Nadadores("StefanyFC", ANCHO - 3, labels[3]);
                 Nadadores LoganNA = new Nadadores("LoganNA", ANCHO - 3, labels[4]);
-
                 //new RelojCom().setVisible(true);
                 RelojCom nadadoresHilos3 = new RelojCom();
                 nadadoresHilos3.Iniciar();
