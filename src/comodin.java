@@ -19,7 +19,9 @@ public class comodin extends javax.swing.JFrame {
     int xb = 0;
     int contador1 = 1;
     int iniciocontador = 0;
-    static int ewf = 0;
+    int a = (int) (Math.random() * 9 + 1);
+    int b = (int) (Math.random() * 9 + 1);
+    int c = (int) (Math.random() * 9 + 1);
 
     /**
      * Creates new form comodin
@@ -131,24 +133,43 @@ public class comodin extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code her
 
-        int a = 1;
-        int b = 2;
-        int c = 3;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
         if (iniciocontador == 1) {
             if (a == jComboBox1.getSelectedIndex() + 1 & b == jComboBox2.getSelectedIndex() + 1 & c == jComboBox3.getSelectedIndex() + 1) {
-                JOptionPane.showMessageDialog(rootPane, "Correcto");
+                JOptionPane.showMessageDialog(rootPane, "CORRECTO\n"
+                        + "HAS GANADO EL JUEGO,\n"
+                        + "GRACIAS POR PARTICIPAR");
                 juego2.variabledelcomodin = 1;
-                juego2.close();
-                 System.exit(0);
-                 
+                t.stop();
 
-                
+                interface_main jFrame1 = new interface_main();
+                jFrame1.setVisible(true);
+                System.exit(0);
+
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Incorrecto");
                 if (contador1 == 3) {
-                    JOptionPane.showMessageDialog(rootPane, "Fin de comodin, fachastes las 3 veces");
 
-                    dispose();
+                    if (juego2.variableelecccion == 1) {
+                        JOptionPane.showMessageDialog(rootPane, "FIN DEL COMODIN\n"
+                                + "YA NO PODRAS DISFRUTAR DE ESTA OPCION");
+                        juego2.comodin2 = 1;
+                        t.stop();
+                        dispose();
+
+                    }
+                    if (juego2.variableelecccion != 1) {
+                        JOptionPane.showMessageDialog(rootPane, "GAME OVER");
+                        t.stop();
+                        interface_main jFrame = new interface_main();
+                        jFrame.setVisible(true);
+                        System.exit(0);
+
+                    }
+
                 }
                 contador1++;
 
@@ -210,10 +231,21 @@ public class comodin extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 xb = 1 + xb;
                 jProgressBar2.setValue(xb);
-                if (jProgressBar2.getValue() == 100) {
-                    JOptionPane.showMessageDialog(rootPane, "Tiempo agotado");
-                    System.exit(0);
+                if (juego2.variableelecccion == 1) {
 
+                    if (jProgressBar2.getValue() == 100) {
+                        JOptionPane.showMessageDialog(rootPane, "Tiempo agotado");
+                        juego2.comodin2 = 1;
+                        t.stop();
+                        dispose();
+
+                    }
+                }
+                if (juego2.variableelecccion != 1) {
+                    if (jProgressBar2.getValue() == 100) {
+                        JOptionPane.showMessageDialog(rootPane, "Tiempo agotado");
+                        System.exit(0);
+                    }
                 }
 
             }
@@ -222,4 +254,5 @@ public class comodin extends javax.swing.JFrame {
         t.start();
 
     }
+
 }

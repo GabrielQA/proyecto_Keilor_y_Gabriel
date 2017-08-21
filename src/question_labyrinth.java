@@ -2,6 +2,7 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -46,9 +47,19 @@ public class question_labyrinth extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imageneskeilor/inicio11.gif"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 120, 90));
 
         jButton2.setText("Instrucciones");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imageneskeilor/LQ.jpg"))); // NOI18N
@@ -75,6 +86,28 @@ public class question_labyrinth extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_formKeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        juego2 jFrame = new juego2();
+        jFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Maneras de ganar el juego:\n"
+                + "1-Ganando la opcion del comodin\n"
+                + "2-Llegando a la ultima pocision del mapa con 3 puntos como minimo\n"
+                + "Comodin:\n"
+                + "El comodin trata de poder adivinar una cifra de 3 numeros,\n"
+                + " totamente aleatorio con un minuto de tiempo.\n"
+                + "Cuentas con 3 oprtunidades para acertar esta cifra sino pierdes\n"
+                + "Hay 2 maneras de seleccionar el comodin:\n"
+                + "1-Cuando respondas la primera pregunta bien, esta te dara la opcion\n"
+                + "de elegir el comodin, una vez lo eligas si ganas, ganas el juego\n"
+                + "si pierdes no podras usarlo otra vez y este se elimina del mapa\n"
+                + "2-La segunda opcion es seleccionándolo en el mapa\n"
+                + "SUERTE ");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

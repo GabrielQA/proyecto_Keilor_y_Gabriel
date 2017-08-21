@@ -1,4 +1,5 @@
 
+import NuevaNadadores.Iniciar;
 import javax.swing.*;
 
 /*
@@ -6,7 +7,6 @@ import javax.swing.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author keilor
@@ -19,7 +19,7 @@ public class interface_main extends javax.swing.JFrame {
     public interface_main() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imageneskeilor/Controller-1.png")).getImage());
-        
+
     }
 
     /**
@@ -46,6 +46,11 @@ public class interface_main extends javax.swing.JFrame {
 
         jb2juego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imageneskeilor/LQ.jpg"))); // NOI18N
         jb2juego.setText("jButton2");
+        jb2juego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb2juegoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,8 +73,15 @@ public class interface_main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb1juegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1juegoActionPerformed
-        // TODO add your handling code here:
+        Iniciar.inicar2();
+        dispose();
     }//GEN-LAST:event_jb1juegoActionPerformed
+
+    private void jb2juegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2juegoActionPerformed
+        question_labyrinth jFrame = new question_labyrinth();
+        jFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jb2juegoActionPerformed
 
     /**
      * @param args the command line arguments

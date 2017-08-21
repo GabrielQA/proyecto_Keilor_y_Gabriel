@@ -4,16 +4,19 @@
  * and open the template in the editor.
  */
 package NuevaNadadores;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class RelojCom extends javax.swing.JFrame {
+
     public RelojCom() {
         initComponents();
-        t = new Timer(10,acciones);
-        
+        t = new Timer(10, acciones);
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
@@ -69,82 +72,83 @@ public class RelojCom extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {
         t.start();
         btnStart.setText("Iniciar");
-         btnPausar.setVisible(true);
-          btnStop.setVisible(true);
+        btnPausar.setVisible(true);
+        btnStop.setVisible(true);
         btnPausar.setEnabled(true);
         btnStop.setEnabled(true);
-        
-    }                                      
-    public void Detener(){
-      t.stop();
-      btnStart.setEnabled(true);
-      btnPausar.setEnabled(true);
-      
-     
 
     }
-    public  void Iniciar(){
+
+    public void Detener() {
+        t.stop();
+        btnStart.setEnabled(true);
+        btnPausar.setEnabled(true);
+
+    }
+
+    public void Iniciar() {
         t.start();
         btnStart.setText("Reanudar");
         btnPausar.setVisible(true);
         btnStop.setVisible(true);
         btnPausar.setEnabled(true);
         btnStop.setEnabled(true);
-       
-       
-        
-        
-    }
-    public void btnPausarActionPerformed(java.awt.event.ActionEvent evt) {                                          
-      t.stop();
-      btnStart.setEnabled(true);
-      btnPausar.setEnabled(true);
-    }                                         
 
-    public void btnStopActionPerformed(java.awt.event.ActionEvent evt) {                                        
-     if(t.isRunning()){
-         t.stop();
-         btnStart.setEnabled(true);
-     }
-     btnStart.setText("Iniciar");
-     btnPausar.setEnabled(true);
-     btnStop.setEnabled(true);
-      m=0; s=0; cs=0;
+    }
+
+    public void btnPausarActionPerformed(java.awt.event.ActionEvent evt) {
+        t.stop();
+        btnStart.setEnabled(true);
+        btnPausar.setEnabled(true);
+    }
+
+    public void btnStopActionPerformed(java.awt.event.ActionEvent evt) {
+        if (t.isRunning()) {
+            t.stop();
+            btnStart.setEnabled(true);
+        }
+        btnStart.setText("Iniciar");
+        btnPausar.setEnabled(true);
+        btnStop.setEnabled(true);
+        m = 0;
+        s = 0;
+        cs = 0;
         actualizarLabel();
-    }                                 
+    }
     public Timer t;
-    public int m,s,cs;
+    public int m, s, cs;
     public ActionListener acciones = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent ae) {
             cs++;
-            if(cs==100){
-               cs=0;
-               ++s;
-                
+            if (cs == 100) {
+                cs = 0;
+                ++s;
+
             }
-            if(s==60){
-                s=0;
+            if (s == 60) {
+                s = 0;
                 ++m;
             }
-            if(m==60){
-                m=0;
-                
+            if (m == 60) {
+                m = 0;
+
             }
             actualizarLabel();
-         
+
         }
     };
-    public void actualizarLabel(){
-        String tiempo=(m<=9?"0":"")+m+":"+(s<=9?"0":"")+s+":"+(cs<=9?"0":"")+cs;
-    EtiquetaTiempo.setText(tiempo);
+
+    public void actualizarLabel() {
+        String tiempo = (m <= 9 ? "0" : "") + m + ":" + (s <= 9 ? "0" : "") + s + ":" + (cs <= 9 ? "0" : "") + cs;
+        EtiquetaTiempo.setText(tiempo);
     }
-    
+
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new RelojCom().setVisible(true);

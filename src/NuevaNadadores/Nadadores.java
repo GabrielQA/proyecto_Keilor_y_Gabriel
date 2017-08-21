@@ -25,8 +25,9 @@ import jdk.nashorn.internal.ir.BreakNode;
  * @author GABRIEL-PC
  */
 public class Nadadores extends Thread {
-    int cont=0;
-    String Cont="";
+
+    int cont = 0;
+    String Cont = "";
     RelojCom Detenerch = new RelojCom();
     int Lo = (int) (Math.random() * 5);
     int Lo2 = (int) (Math.random() * 10);
@@ -35,7 +36,7 @@ public class Nadadores extends Thread {
     JLabel label;
 
     public Nadadores(String nombre, int limite, JLabel label) {
-        
+
         this.nombre = nombre;
         this.limite = limite;
         this.label = label;
@@ -63,7 +64,7 @@ public class Nadadores extends Thread {
 
             }
         }
-        
+
         System.out.println("El jugador " + nombre + "Ha llegado a la meta");
 
         //RelojCom nadadoresHilos3 = new RelojCom();               
@@ -73,13 +74,11 @@ public class Nadadores extends Thread {
         //Aqui 
         //JOptionPane.showMessageDialog(null,"El jugador "+nombre + "Ha llegado a la meta","MENSAJE", JOptionPane.INFORMATION_MESSAGE);
         yield();
-       /* RelojCom Dete = new RelojCom();
+        /* RelojCom Dete = new RelojCom();
         Dete.Detener();
         Dete.setVisible(true);
-        */
-       
-       
-        
+         */
+
     }
 
 }
