@@ -14,8 +14,8 @@ import javax.swing.JLabel;
  *
  * @author GABRIEL-PC
  */
-//This Class just like all the ones that are named Swimmers
-//Besides adding a control that if each selected player reaches the goal stops
+//This class as well as all those who are called swimmers
+// In addition to adding a control that if each selected player reaches the goal will stop
 public class Nadadores4 extends Thread{
      
     int Lo = (int) (Math.random() * 5);

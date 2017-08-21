@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package NuevaNadadores;
-
+ //This class is the one that takes the time or rather
+//is said the timer where it is created and is called in each class of swimmer threads
+// Starts when you start competition
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;

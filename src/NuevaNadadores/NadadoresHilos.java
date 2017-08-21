@@ -19,6 +19,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+//This class is the main, is where is the method to call the elapsed time and also has the statistics by means of a counter
+// sets the tags that make the gifs move from side to side with the help of the Swimmers class1,2,3,4.
+// in addition to that in this class extends the panel and the blue background stamps that contain a gif the children who come to the school prior to this.
+// This kind of goodbye that makes possible the movement of the players are also the ones that change their names when choosing them.
+//This is the main class of all that have the same name of Swimmers threads.       
 public class NadadoresHilos extends JFrame {
 
    
@@ -56,6 +61,7 @@ public class NadadoresHilos extends JFrame {
             labels[n].setLocation(0, 0);
 
         }
+        //Here select the option of the statistics
         a = new JTextPane();
         Estadisticas = new JButton("Estadisticas");
         Estadisticas.addActionListener(new ActionListener() {

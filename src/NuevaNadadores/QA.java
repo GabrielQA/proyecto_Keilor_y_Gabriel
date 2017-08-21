@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package NuevaNadadores;
 
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ import javax.swing.JPanel;
  *
  * @author GABRIEL-PC
  */
+//This class what it does is that it appears the menu of the 
+//beginning and that there are 3 options to start, instructions, and list of competitors once touched the option to start
+//Will unfold what would be the question of how many competitors will compete,
+//Once this question is answered, select which of the competitors will compete,
+//once said this option is called the class with the names selected by the user.
 public class QA extends javax.swing.JFrame {
 
     ArrayList<String> Lista = new ArrayList();

@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//This class includes the same function of the Swimmer Threads, 
+//is the same, only that the selection of the characters, will be the only thing that changes.
 package NuevaNadadores;
 
 import java.awt.Color;
